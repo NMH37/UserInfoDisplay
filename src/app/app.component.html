@@ -5,7 +5,9 @@
   </h1>
 </div>
 <div class="App-panel">
-  <wj-flex-grid [selectionMode]="'RowRange'" [itemsSource]="data1">
+
+  <wj-flex-grid [allowResizing]="'ColumnsAllCells'" [autoSizeMode]="'Cells'" [quickAutoSize]="true" [selectionMode]="'RowRange'"
+    [itemsSource]="data1">
   </wj-flex-grid>
 
 </div>

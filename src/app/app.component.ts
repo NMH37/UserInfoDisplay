@@ -11,7 +11,6 @@ export class AppComponent implements OnInit {
   data1;
   title = 'wijmoGrid';
   usersInfo: User[];
-  m_collectionView = new CollectionView();
   constructor(private dataService: DataService) { }
   ngOnInit() {
 
@@ -22,7 +21,7 @@ export class AppComponent implements OnInit {
       for (let i = 0; i < this.usersInfo.length; i++) {
         data.push({
           id: this.usersInfo[i].id,
-          username: this.usersInfo[i].username,
+          fullname: this.usersInfo[i].name,
           email: this.usersInfo[i].email,
           phone: this.usersInfo[i].phone,
           website: this.usersInfo[i].website,
