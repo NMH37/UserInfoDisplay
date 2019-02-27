@@ -1,3 +1,4 @@
+
 export interface User {
   id: string;
   name: string;
@@ -7,5 +8,6 @@ export interface User {
   website: string;
   active: boolean;
   percent: number;
+  dateOfBirth: Date;
   cashOnHand: number;
 }

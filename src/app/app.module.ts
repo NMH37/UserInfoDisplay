@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WjGridModule } from 'wijmo/wijmo.angular2.grid';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -18,7 +19,7 @@ import { WjGridModule } from 'wijmo/wijmo.angular2.grid';
     WjGridModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
