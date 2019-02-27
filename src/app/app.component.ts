@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
       for (let i = 0; i < this.usersInfo.length; i++) {
         data.push({
           id: this.usersInfo[i].id,
-          fullname: this.usersInfo[i].name,
+          name: this.usersInfo[i].name,
           email: this.usersInfo[i].email,
           phone: this.usersInfo[i].phone,
           website: this.usersInfo[i].website,

@@ -2,7 +2,7 @@
 @import "wijmo/styles/wijmo.css";
 
 .App-panel {
-    margin: 0 48pt;
+    margin: auto;
     text-align: center;
   }
     .App-panel .wj-control {
