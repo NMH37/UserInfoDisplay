@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
           website: this.usersInfo[i].website,
           active: this.usersInfo[i].active,
           percent: this.usersInfo[i].percent,
-          cashOnHand: this.usersInfo[i].cashOnHand
+          cashOnHand: this.dataService.trasformCurrency(this.usersInfo[i].cashOnHand),
         });
         console.log(data);
 
