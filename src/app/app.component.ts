@@ -16,19 +16,18 @@ export class AppComponent implements OnInit {
 
     const data = [];
     this.dataService.getUsers().subscribe((response) => {
-      // console.log(response);
       this.usersInfo = response;
       for (let i = 0; i < this.usersInfo.length; i++) {
         data.push({
           id: this.usersInfo[i].id,
           name: this.usersInfo[i].name,
           email: this.usersInfo[i].email,
-          dateOfBirth: this.dataService.trasformDate(this.usersInfo[i].dateOfBirth),
+          dateOfBirth: this.dataService.transformDate(this.usersInfo[i].dateOfBirth),
           phone: this.usersInfo[i].phone,
           website: this.usersInfo[i].website,
           active: this.usersInfo[i].active,
-          percent: this.usersInfo[i].percent,
-          cashOnHand: this.dataService.trasformCurrency(this.usersInfo[i].cashOnHand),
+          percent: this.dataService.transformIntoPercent(this.usersInfo[i].percent),
+          cashOnHand: this.dataService.transformCurrency(this.usersInfo[i].cashOnHand),
         });
         console.log(data);
 

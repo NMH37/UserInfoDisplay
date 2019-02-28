@@ -3,13 +3,21 @@
   <h1>
     Active/InActive Users
   </h1>
+  <button class="select mat-primary" mat-raised-button>
+    Set as Active
+  </button>
+  <button class="select mat-primary" mat-raised-button>
+    Set as InActive
+  </button>
+  <mat-checkbox>Show inactive</mat-checkbox>
 </div>
+
+
 <div class="App-panel">
 
-  <wj-flex-grid [allowResizing]="'Both'" [autoSizeMode]="'Both'" [quickAutoSize]="true" [selectionMode]="'RowRange'" [itemsSource]="data1"
-    [autoGenerateColumns]="false">
+  <wj-flex-grid [autoSizeMode]="'Both'" [quickAutoSize]="true" [selectionMode]="'RowRange'" [itemsSource]="data1" [autoGenerateColumns]="false">
     <wj-flex-grid-column [header]="'ID'" [binding]="'id'"></wj-flex-grid-column>
-    <wj-flex-grid-column [header]="'FullName'" [binding]="'name'" [quickAutoSize]="true" [format]="'n2'"></wj-flex-grid-column>
+    <wj-flex-grid-column [header]="'FullName'" [binding]="'name'" [maxWidth]="291"></wj-flex-grid-column>
     <wj-flex-grid-column [header]="'Email'" [binding]="'email'"></wj-flex-grid-column>
     <wj-flex-grid-column [header]="'BirthDate'" [binding]="'dateOfBirth'" [dataType]="'Date'" format="MM/dd/yyyy"></wj-flex-grid-column>
 

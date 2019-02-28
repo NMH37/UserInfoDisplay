@@ -2,7 +2,7 @@ import { User } from './../data.model';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DatePipe, CurrencyPipe } from '@angular/common';
+import { DatePipe, CurrencyPipe, formatPercent } from '@angular/common';
 
 const baseUrl = environment.apiUrl;
 
@@ -12,11 +12,17 @@ const baseUrl = environment.apiUrl;
 export class DataService {
 
   constructor(private datePipe: DatePipe, private currencyPipe: CurrencyPipe, private http: HttpClient) { }
-  trasformDate(date) {
+  transformDate(date) {
     return this.datePipe.transform(date, 'dd/MM/yyyy');
   }
-  trasformCurrency(amount) {
+  transformCurrency(amount) {
     return this.currencyPipe.transform(amount, 'USD');
+  }
+  /*  transformNumber(amount) {
+     return (amount * 100) + '%';
+   } */
+  transformIntoPercent(amount) {
+    return formatPercent(amount, 'en-US');
   }
   getUsers() {
     return this.http.get<User[]>(baseUrl);
