@@ -14,18 +14,21 @@
 
 
 <div class="App-panel">
+  <input type="text" class="form-control" placeholder="filter" [(ngModel)]="filter" />
 
-  <wj-flex-grid [autoSizeMode]="'Both'" [quickAutoSize]="true" [selectionMode]="'RowRange'" [itemsSource]="data1" [autoGenerateColumns]="false">
-    <wj-flex-grid-column [header]="'ID'" [binding]="'id'"></wj-flex-grid-column>
-    <wj-flex-grid-column [header]="'FullName'" [binding]="'name'" [maxWidth]="291"></wj-flex-grid-column>
-    <wj-flex-grid-column [header]="'Email'" [binding]="'email'"></wj-flex-grid-column>
-    <wj-flex-grid-column [header]="'BirthDate'" [binding]="'dateOfBirth'" [dataType]="'Date'" format="MM/dd/yyyy"></wj-flex-grid-column>
+  <wj-flex-grid #flex class="App-panel_grid" [autoSizeMode]="'Both'" [quickAutoSize]="true" [selectionMode]="5" [itemsSource]="data1"
+    [autoGenerateColumns]="false">
 
-    <wj-flex-grid-column [header]="'Phone'" [binding]="'phone'"></wj-flex-grid-column>
-    <wj-flex-grid-column [header]="'Website'" [binding]="'website'"></wj-flex-grid-column>
-    <wj-flex-grid-column [header]="'Active'" [binding]="'active'"></wj-flex-grid-column>
-    <wj-flex-grid-column [header]="'Percent'" [binding]="'percent'"></wj-flex-grid-column>
-    <wj-flex-grid-column [header]="'CashOnHand'" [binding]="'cashOnHand'"></wj-flex-grid-column>
+    <wj-flex-grid-column [isReadOnly]="true" header="ID" binding="id"></wj-flex-grid-column>
+    <wj-flex-grid-column header="FullName" binding="name" width="*"></wj-flex-grid-column>
+    <wj-flex-grid-column header="Email" binding="email"></wj-flex-grid-column>
+    <wj-flex-grid-column header="BirthDate" binding="dateOfBirth" [dataType]="'Date'" format="MM/dd/yyyy"></wj-flex-grid-column>
+
+    <wj-flex-grid-column header="Phone" binding="phone"></wj-flex-grid-column>
+    <wj-flex-grid-column header="Website" binding="website"></wj-flex-grid-column>
+    <wj-flex-grid-column header="Active" binding="active"></wj-flex-grid-column>
+    <wj-flex-grid-column header="Percent" binding="percent"></wj-flex-grid-column>
+    <wj-flex-grid-column header="CashOnHand" binding="cashOnHand"></wj-flex-grid-column>
 
 
   </wj-flex-grid>

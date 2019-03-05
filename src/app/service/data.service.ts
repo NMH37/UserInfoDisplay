@@ -18,13 +18,13 @@ export class DataService {
   transformCurrency(amount) {
     return this.currencyPipe.transform(amount, 'USD');
   }
-  /*  transformNumber(amount) {
-     return (amount * 100) + '%';
-   } */
   transformIntoPercent(amount) {
     return formatPercent(amount, 'en-US');
   }
   getUsers() {
     return this.http.get<User[]>(baseUrl);
+  }
+  getFeildNames() {
+    return ['id', 'email', 'name'];
   }
 }

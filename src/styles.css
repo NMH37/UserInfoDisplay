@@ -4,13 +4,56 @@
 .App-panel {
     margin: auto;
     text-align: center;
+    background: gray;
   }
     .App-panel .wj-control {
       display: inline-block;
       width: auto;
       height: auto;
       vertical-align: top;
+      color:rgb(209, 136, 136);
     }
+    .wj-flex-grid-column {
 
+      background: gray;
+    }
+    .wj-flexgrid {
+      background-color: #fff;
+      box-shadow: 4px 4px 10px 0 rgba(50, 50, 50, 0.75);
+      height: 300px;
+      margin-bottom: 12px;
+  }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  background-color: #f8f8f8;
+  font-family: -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+  padding: 0 0 10px;
+}
+.custom-flex-grid .wj-header.wj-cell {
+  color: #fff;
+  background-color: #000;
+  border-bottom: solid 1px #404040;
+  border-right: solid 1px #404040;
+  font-weight: bold;
+}
+.custom-flex-grid .wj-cell {
+  background-color: #fff;
+  border: none;
+}
+.custom-flex-grid .wj-alt:not(.wj-state-selected):not(.wj-state-multi-selected) {
+  background-color: #fff;
+}
+.custom-flex-grid .wj-state-selected {
+  background: #000;
+  color: #fff;
+}
+.custom-flex-grid .wj-state-multi-selected {
+  background: #222;
+  color: #fff;
+}
+@media (min-width: 600px) {
+  .App-panel .wj-control {
+    display: block;
+
+  }
+}
