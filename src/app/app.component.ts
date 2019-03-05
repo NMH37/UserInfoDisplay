@@ -16,17 +16,14 @@ import { FlexGrid } from 'wijmo/wijmo.grid';
 })
 export class AppComponent implements OnInit {
   data1: CollectionView;
-  items;
   title = 'wijmoGrid';
   fieldNames: string[];
   usersInfo: User[];
   private _filter = '';
   private _toFilter: any;
-  @ViewChild('flex') flex: wjcGrid.FlexGrid;
+  // @ViewChild('flex') flex: wjcGrid.FlexGrid;
   constructor(private dataService: DataService) { }
   ngOnInit() {
-    /*  const flexgrid = new FlexGrid('#host_element');
-     const fs = flexgrid.sortedColumn; */
     const data = [];
     this.dataService.getUsers().subscribe((response) => {
       this.usersInfo = response;
@@ -39,8 +36,8 @@ export class AppComponent implements OnInit {
           phone: this.usersInfo[i].phone,
           website: this.usersInfo[i].website,
           active: this.usersInfo[i].active,
-          percent: this.dataService.transformIntoPercent(this.usersInfo[i].percent),
-          cashOnHand: this.dataService.transformCurrency(this.usersInfo[i].cashOnHand),
+          percent: this.usersInfo[i].percent,
+          cashOnHand: this.usersInfo[i].cashOnHand,
         });
       }
       this.data1 = new CollectionView(data);
