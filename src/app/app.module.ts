@@ -27,7 +27,7 @@ import { MatInputModule } from '@angular/material/input';
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
-    WjGridFilterModule
+    WjGridFilterModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
