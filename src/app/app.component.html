@@ -1,20 +1,19 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
     Active/InActive Users
   </h1>
-  <button class="select mat-primary" mat-raised-button>
+  <button class="select mat-primary" mat-raised-button (click)="selectActive()">
     Set as Active
   </button>
-  <button class="select mat-primary" mat-raised-button>
+  <button class="select mat-primary" mat-raised-button (click)="selectInActive()">
     Set as InActive
   </button>
-  <mat-checkbox>Show inactive</mat-checkbox>
+  <mat-checkbox (click)="showInActive()">Show inactive</mat-checkbox>
 </div>
 
 
 <div class="App-panel">
-  <input type="text" class="form-control" placeholder="filter" [(ngModel)]="filter" />
+
 
   <wj-flex-grid #flex class="App-panel_grid" [autoSizeMode]="'Both'" [quickAutoSize]="true" [selectionMode]="5" [itemsSource]="data1"
     [autoGenerateColumns]="false">
@@ -34,5 +33,9 @@
   </wj-flex-grid>
 
 </div>
-
-<router-outlet></router-outlet>
+<!-- <input type="text" class="form-control" placeholder="filter" [(ngModel)]="filter" /> -->
+<form class="example-form">
+  <mat-form-field class="form-control">
+    <input matInput name="filter" placeholder="Filter" [(ngModel)]="filter">
+  </mat-form-field>
+</form>

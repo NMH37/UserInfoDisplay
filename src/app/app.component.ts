@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { } from '@angular/forms';
 import { CollectionView, } from 'wijmo/wijmo';
 import * as wjcGrid from 'wijmo/wijmo.grid';
 import { DataService } from './service/data.service';
 import { User } from './data.model';
-import * as wjcGridFilter from 'wijmo/wijmo.grid.filter';
-import { FlexGrid } from 'wijmo/wijmo.grid';
+/* import * as wjcGridFilter from 'wijmo/wijmo.grid.filter';
+import { FlexGrid } from 'wijmo/wijmo.grid'; */
 
 
 
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   usersInfo: User[];
   private _filter = '';
   private _toFilter: any;
-  // @ViewChild('flex') flex: wjcGrid.FlexGrid;
+  @ViewChild('flex') flexgrid: wjcGrid.FlexGrid;
   constructor(private dataService: DataService) { }
   ngOnInit() {
     const data = [];
@@ -41,9 +41,11 @@ export class AppComponent implements OnInit {
         });
       }
       this.data1 = new CollectionView(data);
+      this.data1.trackChanges = true;
       this.data1.filter = this._filterFunction.bind(this);
     });
   }
+
 
   get filter(): string {
     return this._filter;
@@ -67,5 +69,27 @@ export class AppComponent implements OnInit {
     }
     return true;
   }
+  selectActive() {
+    console.log(this.data1.items.forEach(item => console.log(item.active)));
+  }
+  showInActive() {
+    console.log('select Inactive working');
+
+  }
+  selectInActive() {
+
+    const selRow = this.flexgrid.selection.row;
+    this.flexgrid.collectionView.items.splice(selRow, 1);
+    console.log(this.flexgrid);
+    console.log('show delete working');
+  }
+  showActive() {
+
+    const selRow = this.flexgrid.selection.row;
+    console.log(selRow, 'selected row');
+    console.log(this.flexgrid, 'flex grid');
+    console.log('show active working');
+  }
+  // end of line
 }
 
