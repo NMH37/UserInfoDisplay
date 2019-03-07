@@ -2,35 +2,4 @@
 @import "wijmo/styles/themes/wijmo.theme.midnight.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-html, body { height: 100%; }
-body {
-  background-color: #f8f8f8;
-  font-family: -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-  padding: 0 0 10px;
-}
-.App-panel {
-    margin: auto;
-    text-align: center;
-    background: gray;
-  }
-    .App-panel .wj-control {
-      display: inline-block;
-      width: auto;
-      height: auto;
-      vertical-align: top;
-      background: #8c8c8c;
-    }
 
-    .wj-flexgrid {
-      background-color: #fff;
-      box-shadow: 4px 4px 10px 0 rgba(50, 50, 50, 0.75);
-      height: auto;
-      margin-bottom: 12px;
-  }
-
-@media (min-width: 600px) {
-  .App-panel .wj-control {
-    display: block;
-
-  }
-}
