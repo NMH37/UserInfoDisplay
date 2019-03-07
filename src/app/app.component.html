@@ -15,8 +15,8 @@
 <div class="App-panel">
 
 
-  <wj-flex-grid #flex class="App-panel_grid" headersVisibility="Column" [autoSizeMode]="'Both'" [quickAutoSize]="true" [selectionMode]="5"
-    [itemsSource]="data1" [autoGenerateColumns]="false">
+  <wj-flex-grid #flex class="App-panel_grid" headersVisibility="Column" [autoSizeMode]="'Both'" isSelected="true" [quickAutoSize]="true"
+    [selectionMode]="'RowRange'" [itemsSource]="data1" [autoGenerateColumns]="false">
 
     <wj-flex-grid-column [isReadOnly]="true" header="ID" binding="id"></wj-flex-grid-column>
     <wj-flex-grid-column header="FullName" binding="name" width="*"></wj-flex-grid-column>

@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
   inActive = false;
   data1: CollectionView;
   title = 'wijmoGrid';
-  fieldNames: string[];
   usersInfo: User[];
   private _filter = '';
   @ViewChild('flex') flexgrid: wjcGrid.FlexGrid;
@@ -45,8 +44,41 @@ export class AppComponent implements OnInit {
       };
     });
   }
+  get filter(): string {
+    return this._filter;
+  }
+  set filter(value: string) {
+    this._filter = value;
+    this.data1.refresh();
+  }
 
+  showInActive() {
+    this.inActive = !this.inActive;
+    this.data1.refresh();
+  }
+  /** working on following  */
+  selectActive() {
+    const newitems = this.data1.items.filter(item => item.active === true);
+    console.log(newitems);
+    this.data1.remove(newitems);
+    this.data1.refresh();
+  }
 
+  selectInActive() {
+    const selectedRow = this.flexgrid.selectedRows;
+    selectedRow.forEach(item => {
+      item._data.active = false;
+      console.log(item._data.active);
+      this.data1.refresh();
+    });
+    console.log(selectedRow, 'selected rows ');
+  }
+  showActive() {
+
+    const selRow = this.flexgrid.selection.row;
+    console.log(selRow, 'selected row');
+    console.log(this.flexgrid, 'flex grid');
+  }
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
@@ -60,34 +92,6 @@ export class AppComponent implements OnInit {
     this.isAllSelected() ?
       this.selection.clear() :
       this.data1.items.forEach(row => this.selection.select(row));
-  }
-  get filter(): string {
-    return this._filter;
-  }
-  set filter(value: string) {
-    this._filter = value;
-    this.data1.refresh();
-  }
-  selectActive() {
-    console.log(this.data1.items.forEach(item => console.log(item.active)));
-  }
-  showInActive() {
-    this.inActive = !this.inActive;
-    this.data1.refresh();
-  }
-  selectInActive() {
-
-    const selRow = this.flexgrid.selection.row;
-    this.flexgrid.collectionView.items.splice(selRow, 1);
-    console.log(this.flexgrid);
-    console.log('show delete working');
-  }
-  showActive() {
-
-    const selRow = this.flexgrid.selection.row;
-    console.log(selRow, 'selected row');
-    console.log(this.flexgrid, 'flex grid');
-    console.log('show active working');
   }
   // end of line
 }
