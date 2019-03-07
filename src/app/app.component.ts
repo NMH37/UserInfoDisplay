@@ -57,13 +57,21 @@ export class AppComponent implements OnInit {
     this.data1.refresh();
   }
   /** working on following  */
-  selectActive() {
+  /* selectActive() {
     const newitems = this.data1.items.filter(item => item.active === true);
     console.log(newitems);
     this.data1.remove(newitems);
     this.data1.refresh();
+  } */
+  selectActive() {
+    const selectedRow = this.flexgrid.selectedRows;
+    selectedRow.forEach(item => {
+      item._data.active = true;
+      console.log(item._data.active);
+      this.data1.refresh();
+    });
+    console.log(selectedRow, 'selected rows ');
   }
-
   selectInActive() {
     const selectedRow = this.flexgrid.selectedRows;
     selectedRow.forEach(item => {
@@ -78,20 +86,6 @@ export class AppComponent implements OnInit {
     const selRow = this.flexgrid.selection.row;
     console.log(selRow, 'selected row');
     console.log(this.flexgrid, 'flex grid');
-  }
-
-  /** Whether the number of selected elements matches the total number of rows. */
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.data1.items.length;
-    return numSelected === numRows;
-  }
-
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
-  masterToggle() {
-    this.isAllSelected() ?
-      this.selection.clear() :
-      this.data1.items.forEach(row => this.selection.select(row));
   }
   // end of line
 }
