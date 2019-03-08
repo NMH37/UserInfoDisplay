@@ -81,6 +81,7 @@ export class AppComponent implements OnInit {
     });
     console.log(selectedRow, 'selected rows ');
   }
+  /* not connected with template yet */
   showActive() {
 
     const selRow = this.flexgrid.selection.row;

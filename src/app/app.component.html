@@ -1,6 +1,6 @@
 <div style="text-align:center">
   <h1>
-    Active/InActive Users
+    Active / InActive Users
   </h1>
   <button class="select mat-primary" mat-raised-button (click)="selectActive()">
     Set as Active
@@ -34,19 +34,8 @@
   </wj-flex-grid>
 
 </div>
-<form class="example-form">
+<form>
   <mat-form-field class="form-control">
     <input matInput name="filter" placeholder="Filter" [(ngModel)]="filter">
   </mat-form-field>
 </form>
-<!--Trying to set Checkbox  -->
-<ng-container matColumnDef="select">
-  <th mat-header-cell *matHeaderCellDef>
-    <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
-    </mat-checkbox>
-  </th>
-  <td mat-cell *matCellDef="let row">
-    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
-    </mat-checkbox>
-  </td>
-</ng-container>

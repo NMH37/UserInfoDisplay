@@ -26,6 +26,9 @@ body {
   .select {
     margin: 10px;
   }
+  h1 {
+    color:rgb(25, 56, 70);
+  }
 @media (min-width: 600px) {
   .App-panel .wj-control {
     display: block;
