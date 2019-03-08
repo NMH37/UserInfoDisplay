@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   usersInfo: User[];
   private _filter = '';
   @ViewChild('flex') flexgrid: wjcGrid.FlexGrid;
-  selection = new SelectionModel(true, []);
+
   constructor(private dataService: DataService) { }
   ngOnInit() {
     const data = [];
